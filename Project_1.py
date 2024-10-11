@@ -1,11 +1,15 @@
 import random
 
 choice_dict = {"s": 1, "w": -1, "g": 0}
+print_dict = {1:"Snake",-1:"Water",0:"Gun"}
 play_again = True
 while (play_again):
     comp = random.randint(-1, 1)
-    choice = input("Enter your choice (snake='s', water='w',gun='g'):  ")
+    choice = input("Enter your choice (snake='s', water='w',gun='g'):  ").lower()
     you = choice_dict[choice]
+    print(f"computer choose:{print_dict[comp]}")
+    print(f"You choose: {print_dict[you]}")
+
     if (comp == -1 and you == 1):
         print("You win!!!")
     elif (comp == -1 and you == 0):
